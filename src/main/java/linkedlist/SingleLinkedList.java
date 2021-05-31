@@ -42,6 +42,7 @@ public class SingleLinkedList {
 
     public void traverse() {
         if(head == null) {
+            System.out.println("SLL does not exist.");
             return;
         }
         Node tmpNode = head;
@@ -54,6 +55,7 @@ public class SingleLinkedList {
         }
         System.out.println();
     }
+
     public boolean searchNode(int value) {
         if(head != null) {
             Node tmpNode = head;
@@ -101,5 +103,11 @@ public class SingleLinkedList {
             tmpNode.next = tmpNode.next.next;
             size --;
         }
+    }
+
+    public void deleteSSL() {
+        head = null; // all references will be deleted
+        tail = null;
+        System.out.println("SLL deleted successfully.");
     }
 }

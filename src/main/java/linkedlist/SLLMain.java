@@ -1,6 +1,6 @@
 package linkedlist;
 
-public class Main {
+public class SLLMain {
     public static void main(String[] args) {
         SingleLinkedList singleLinkedList = new SingleLinkedList();
         singleLinkedList.create(5);
@@ -15,6 +15,8 @@ public class Main {
         singleLinkedList.searchNode(9);
         singleLinkedList.searchNode(2);
         singleLinkedList.deleteNode(3);
+        singleLinkedList.traverse();
+        singleLinkedList.deleteSSL();
         singleLinkedList.traverse();
     }
 }
