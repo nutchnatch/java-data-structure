@@ -1,6 +1,4 @@
-package linkedlist.questions;
-
-import stack.Node;
+package stack.questions;
 
 public class StackMin {
 
@@ -48,7 +46,7 @@ public class StackMin {
         } else if (min.value < value) {
             min = new Node(min.value, min);
         } else {
-            min = new stack.Node(value, min);
+            min = new Node(value, min);
         }
         top = new Node(value, top);
     }

@@ -1,12 +1,12 @@
 package stack;
 
-public class Stack {
+public class StackWithArray {
 
     private int[] arr;
     int topOfStack;
 
     public static void main(String[] args) {
-        Stack stack = new Stack(4);
+        StackWithArray stack = new StackWithArray(4);
         stack.push(1);
         stack.push(2);
         stack.push(3);
@@ -18,7 +18,7 @@ public class Stack {
         stack.deleteStack();
     }
 
-    public Stack(int size) {
+    public StackWithArray(int size) {
         this.arr = new int[size];
         this.topOfStack = -1;
         System.out.println("This stack is created with size of: " + size);
