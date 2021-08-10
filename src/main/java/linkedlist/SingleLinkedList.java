@@ -85,15 +85,15 @@ public class SingleLinkedList {
             Node tmpNode = head;
             for(int i = 0; i < size - 1; i ++) {
                 tmpNode = tmpNode.next;
-                if(tmpNode == head) { // one element in ssl
-                    tail = head = null;
-                    size --;
-                    return;
-                } else {
-                    tmpNode.next = null;
-                    tail = tmpNode;
-                    size --;
-                }
+            }
+            if(tmpNode == head) { // one element in ssl
+                tail = head = null;
+                size --;
+                return;
+            } else {
+                tmpNode.next = null;
+                tail = tmpNode;
+                size --;
             }
         } else {
             Node tmpNode = head;
