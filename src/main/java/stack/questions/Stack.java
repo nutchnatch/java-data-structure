@@ -57,4 +57,14 @@ public class Stack {
         size --;
         return result;
     }
+
+    public int removeBottom() {
+        StackNode b = bottom;
+        bottom = bottom.above;
+        if(bottom != null) {
+            bottom.bellow = null;
+        }
+        size --;
+        return b.value;
+    }
 }
