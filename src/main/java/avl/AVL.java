@@ -15,6 +15,7 @@ public class AVL {
         System.out.println();
         avl.delete(5);
         avl.levelOrder();
+        avl.deleteTree();
     }
 
     BinaryNode root;
@@ -207,5 +208,10 @@ public class AVL {
 
     public void delete(int value) {
         root = delete(root, value);
+    }
+
+    public void deleteTree() {
+        root = null;
+        System.out.println("Tree successfully deleted.");
     }
 }
