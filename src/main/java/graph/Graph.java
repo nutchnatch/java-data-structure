@@ -1,9 +1,6 @@
 package graph;
 
-import java.util.LinkedList;
-import java.util.List;
-import java.util.ArrayList;
-import java.util.Stack;
+import java.util.*;
 
 public class Graph {
 
@@ -28,20 +25,34 @@ public class Graph {
 //        graph.bfs();
 //        graph.dfs();
 
-        System.out.println();
-        System.out.println("=====================");
+//        System.out.println();
+//        System.out.println("=====================");
 
-        Graph graph2 = new Graph(nodeList);
-        graph2.addDirectedEdges(0,2);
-        graph2.addDirectedEdges(2,4);
-        graph2.addDirectedEdges(4,7);
-        graph2.addDirectedEdges(4,5);
-        graph2.addDirectedEdges(5,6);
-        graph2.addDirectedEdges(1,2);
-        graph2.addDirectedEdges(1,3);
-        graph2.addDirectedEdges(3,5);
-        System.out.println(graph2.toString());
-        graph2.topologicalSort();
+//        Graph graph2 = new Graph(nodeList);
+//        graph2.addDirectedEdges(0,2);
+//        graph2.addDirectedEdges(2,4);
+//        graph2.addDirectedEdges(4,7);
+//        graph2.addDirectedEdges(4,5);
+//        graph2.addDirectedEdges(5,6);
+//        graph2.addDirectedEdges(1,2);
+//        graph2.addDirectedEdges(1,3);
+//        graph2.addDirectedEdges(3,5);
+//        System.out.println(graph2.toString());
+//        graph2.topologicalSort();
+
+        // SSSPP
+        Graph graph = new Graph(nodeList);
+        graph.addUndirectedEdge(0, 1);
+        graph.addUndirectedEdge(0, 2);
+        graph.addUndirectedEdge(1, 3);
+        graph.addUndirectedEdge(1, 6);
+        graph.addUndirectedEdge(2, 3);
+        graph.addUndirectedEdge(2, 4);
+        graph.addUndirectedEdge(3, 5);
+        graph.addUndirectedEdge(4, 5);
+        graph.addUndirectedEdge(5, 6);
+        System.out.println(graph.toString());
+        graph.bfsForSSSPP(nodeList.get(0));
     }
 
     List<GraphNode> nodeList = new ArrayList<>();
@@ -160,6 +171,32 @@ public class Graph {
 
         while(!stack.isEmpty()) {
             System.out.print(stack.pop().name + " ");
+        }
+    }
+
+    public static void pathPrint(GraphNode node) {
+        if(node.parent != null) {
+            pathPrint(node.parent);
+        }
+        System.out.print(node.name + " ");
+    }
+
+    public void bfsForSSSPP(GraphNode node) {
+        Queue<GraphNode> queue = new LinkedList<>();
+        queue.add(node);
+        while(!queue.isEmpty()) {
+            GraphNode currentNode = queue.remove();
+            currentNode.isVisited = true;
+            System.out.print("Printing path for node " + currentNode.name + ": ");
+            pathPrint(currentNode);
+            System.out.println();
+            for(GraphNode neighbor: getNeighbors(currentNode)) {
+                if(!neighbor.isVisited) {
+                    queue.add(neighbor);
+                    neighbor.isVisited = true;
+                    neighbor.parent = currentNode;
+                }
+            }
         }
     }
 }
