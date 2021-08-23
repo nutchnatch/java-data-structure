@@ -13,6 +13,7 @@ public class WeightedNode implements Comparable<WeightedNode> {
     public WeightedNode parent = null;
     public int distance;
     public int index;
+    public DisjoinSet set;
 
     public WeightedNode(String name, int index) {
         this.name = name;
