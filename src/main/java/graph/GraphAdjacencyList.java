@@ -134,7 +134,6 @@ public class GraphAdjacencyList {
         }
     }
 
-    // topological sort
     public void addDirectedEdges(int i, int j) {
         GraphNode first = nodeList.get(i);
         GraphNode second = nodeList.get(j);
@@ -151,6 +150,7 @@ public class GraphAdjacencyList {
         stack.push(node);
     }
 
+    // topological sort
     void topologicalSort() {
         Stack<GraphNode> stack = new Stack<>();
         for(GraphNode node: nodeList) {
