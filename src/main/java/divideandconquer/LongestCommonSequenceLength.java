@@ -1,8 +1,8 @@
 package divideandconquer;
 
-public class LongestCommonSequence {
+public class LongestCommonSequenceLength {
     public static void main(String[] args) {
-        LongestCommonSequence longestCommonSequence = new LongestCommonSequence();
+        LongestCommonSequenceLength longestCommonSequence = new LongestCommonSequenceLength();
         System.out.println(longestCommonSequence.longestCommonSequence("elephant", "erepat"));
     }
 

@@ -1,8 +1,8 @@
 package divideandconquer;
 
-public class LongestRepeatedSequence {
+public class LongestRepeatedSequenceLength {
     public static void main(String[] args) {
-        LongestRepeatedSequence lrs = new LongestRepeatedSequence();
+        LongestRepeatedSequenceLength lrs = new LongestRepeatedSequenceLength();
         System.out.println(lrs.longestRepeatedSequence("ATAKTKGGA"));
         System.out.println(lrs.findLongestRepeatingSubSeq("ATAKTKGGA"));
     }

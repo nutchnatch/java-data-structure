@@ -1,8 +1,8 @@
 package dynamicprogramming;
 
-public class LongestRepeatedSequenceDP {
+public class LongestRepeatedSequenceLengthDP {
     public static void main(String[] args) {
-        LongestRepeatedSequenceDP lrs = new LongestRepeatedSequenceDP();
+        LongestRepeatedSequenceLengthDP lrs = new LongestRepeatedSequenceLengthDP();
         System.out.println(lrs.longestRepeatedSequence("ATAKTKGGA"));
         System.out.println(lrs.longestRepeatedSequenceDP("ATAKTKGGA"));
     }
